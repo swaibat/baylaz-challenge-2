@@ -5,6 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.use('/api/v1/users', usersRoute);
+app.use('/api/v1/loans', loansRoute);
 
 // if the page is not found
 app.use((req, res, next) => {
