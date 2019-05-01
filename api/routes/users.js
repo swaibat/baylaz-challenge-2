@@ -62,4 +62,18 @@ router.post('/auth/signup', (req, res, next) => {
   },
 );
 
+// signin route
+router.post('/auth/signin', (req, res, next) => {
+  // token const
+  const token = jwt.sign({ email: req.body.email, password: req.body.password }, appSecreteKey, { expiresIn: '1hr' });
+  // check for the details existance
+  const user = users.find(u => u.email === req.body.email);
+  if (user.password !== req.body.password) {
+    res.status(200).send({ message: 'Auth failed,invalid details' });
+  } else {
+    user.token = token;
+    res.send(user);
+  }
+});
+
 export default router;
