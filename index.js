@@ -1,6 +1,6 @@
 import express from 'express'
 import usersRoute from './api/routes/users'
-import loansRoute from './api/routes/users'
+import loansRoute from './api/routes/loans'
 
 const app = express();
 app.use(express.json());
