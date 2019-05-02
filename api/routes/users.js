@@ -45,7 +45,7 @@ router.post('/auth/signup', (req, res, next) => {
     // token const
     const token = jwt.sign({ email: req.body.email, password: req.body.password }, appSecreteKey, { expiresIn: '1hr' });
     const user = {
-      status: 1,
+      status: 200,
       data: {
         id: short.generate(),
         token,

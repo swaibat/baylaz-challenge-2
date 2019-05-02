@@ -1,5 +1,4 @@
 import express from 'express';
-import moment from 'moment';
 import short from 'short-uuid';
 
 const router = express.Router();
@@ -8,7 +7,7 @@ const loans = [
   {
     id: 'QK-588A979LL3M',
     user: 'jobgmail.com',
-    createdOn: 'job',
+    createdOn: 1556793783791,
     status: 'pending',
     repaid: false,
     tenor: 50,
@@ -33,7 +32,7 @@ router.post('/', (req, res, next) => {
     data: {
       id: short.generate(),
       user: req.body.user,
-      createdOn: moment.now(),
+      createdOn: Date.now(),
       status: 'pending',
       repaid: false,
       tenor: req.body.tenor,
