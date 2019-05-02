@@ -2,7 +2,7 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import short from 'short-uuid';
-import joi from 'joi'
+import joi from 'joi';
 
 const router = express.Router();
 const appSecreteKey = 'hksuua7as77hjvb348b3j2hbrbsc9923k';
